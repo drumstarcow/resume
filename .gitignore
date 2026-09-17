@@ -1,0 +1,6 @@
+# 工作区内部数据，不纳入仓库
+.workbuddy/
+
+# 生成简历文本用的临时脚本与输出
+extract_resume.py
+resume_text.txt
