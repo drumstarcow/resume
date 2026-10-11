@@ -21,6 +21,21 @@ const PROJECTS = [
     demo: "",
     repo: ""
   }
+  ,
+  {
+    title: "投标智能体平台",
+    desc: "基于 FastAPI 与 SQLite 的投标辅助智能体：标讯智能匹配、招标文件废标风险体检、RAG 知识问答、投标建议书一键生成；内置工具调用智能体（规则模式 + 可选 LLM），全程审计日志与人工确认闭环。",
+    tags: ["FastAPI", "SQLite", "Python", "Agent", "RAG", "LLM"],
+    demo: "",
+    repo: "https://github.com/drumstarcow/bid-agent"
+  },
+  {
+    title: "Sanda Market",
+    desc: "校园app",
+    tags: ["JavaScript", "项目作品"],
+    demo: "",
+    repo: "https://github.com/drumstarcow/sanda-market"
+  }
   // ↓↓↓ 在这里继续添加你做过的其他项目，复制下面这段并修改即可 ↓↓↓
   // ,
   // {
