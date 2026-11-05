@@ -238,6 +238,17 @@
     </div>
   </section>
 
+  <!-- 展示灯箱 -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <div class="lightbox-inner">
+      <div class="lightbox-bar">
+        <h3 id="lightboxTitle">项目展示</h3>
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="关闭">×</button>
+      </div>
+      <div class="lightbox-body" id="lightboxBody"></div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <p>© <span id="year"></span> 孙涵韬 · 上海杉达学院 · 数据科学与大数据技术</p>
