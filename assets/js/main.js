@@ -70,16 +70,55 @@ const PROJECTS = [
    每个分类包含 title（分类名）与 items（技能列表）。 */
 const SKILLS = [
   {
-    title: "数据处理工具",
-    items: ["SQL（MySQL / Navicat）", "Python（Pandas / NumPy）", "Matplotlib / Seaborn", "Excel（透视表 / VLOOKUP）", "Tableau"]
+    title: "AI 应用与大模型",
+    items: [
+      "LLM API 接入（可替换供应商 / 无 key 降级）",
+      "Agent 编排（规则 + 工具调用 + 多轮对话）",
+      "RAG 检索增强（文档切分 / 向量化 / 带引用回答）",
+      "知识图谱（89 节点 / 278 关系，按关联层展开）",
+      "提示词工程（功能说一次、边界说三次）",
+      "人工确认闭环与审计留痕设计"
+    ]
   },
   {
-    title: "专业知识",
-    items: ["统计学基础（均值 / 方差 / 相关性）", "数据结构与算法", "数据库原理", "数据可视化", "Hadoop / Spark 概念"]
+    title: "鸿蒙与客户端",
+    items: [
+      "HarmonyOS / ArkTS（App 与 PC 双端）",
+      "ArkUI 声明式界面与状态管理",
+      "DevEco Studio 构建、签名与上架流程",
+      "华为 AGC 后台与审核材料准备"
+    ]
   },
   {
-    title: "软技能",
-    items: ["逻辑思维与数据敏感度", "文档撰写与报告表达", "团队协作", "业务需求理解"]
+    title: "后端与工程",
+    items: [
+      "Python / FastAPI（异步接口、数据校验）",
+      "Node.js 单文件后端",
+      "SQLite / MySQL 与表结构设计",
+      "pytest 接口级测试与 CI",
+      "Git 版本管理与 GitHub Pages 部署"
+    ]
+  },
+  {
+    title: "数据与分析",
+    items: [
+      "SQL（MySQL / Navicat）",
+      "Python（Pandas / NumPy）",
+      "Matplotlib / Seaborn / Tableau",
+      "Excel（透视表 / VLOOKUP）",
+      "统计学基础（均值 / 方差 / 相关性）",
+      "Hadoop / Spark 概念"
+    ]
+  },
+  {
+    title: "业务与表达",
+    items: [
+      "需求挖掘与访谈（FDE 方法：先定基线再谈方案）",
+      "流程梳理与泳道图 / 架构图绘制",
+      "方案文档与报价测算",
+      "报告撰写与结论可核验",
+      "团队协作与跨角色沟通"
+    ]
   }
 ];
 
