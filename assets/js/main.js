@@ -83,18 +83,25 @@ function renderProjects() {
   if (!grid) return;
   grid.innerHTML = PROJECTS.map(p => {
     const tags = (p.tags || []).map(t => `<span>${t}</span>`).join("");
-    const shots = (p.shots || []).map((src, i) =>
-      `<figure class="project-shot"><img src="${src}" alt="${p.title} 界面截图 ${i + 1}" loading="lazy"></figure>`
-    ).join("");
-    const shotsBlock = shots ? `<div class="project-shots">${shots}</div>` : "";
+    const shots = p.shots || [];
+    const cover = shots.length
+      ? `<figure class="project-shot" data-project="${p.title}" onclick="openLightbox('${p.title}')">
+           <img src="${shots[0]}" alt="${p.title} 界面预览" loading="lazy">
+           <figcaption>点击查看展示（${shots.length} 张）</figcaption>
+         </figure>`
+      : "";
+    const actions = [];
+    if (shots.length) actions.push(`<button class="btn-mini" onclick="openLightbox('${p.title}')">查看展示</button>`);
+    if (p.repo) actions.push(`<a class="link-mini" href="${p.repo}" target="_blank" rel="noopener">源代码 ↗</a>`);
+    if (p.demo) actions.push(`<a class="link-mini" href="${p.demo}" target="_blank" rel="noopener">在线演示 ↗</a>`);
     return `
       <article class="project-card">
-        ${shotsBlock}
+        ${cover}
         <h3>${p.title}</h3>
         <div class="project-tags">${tags}</div>
         <p>${p.desc}</p>
-      </article>`;
-  }).join("");
+        <div class="project-actions">${actions.join("")}</div>
+      </article>`;  }).join("");
 }
 
 function renderSkills() {
@@ -133,3 +140,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
+
+/* ------------------- 展示灯箱 ------------------- */
+function openLightbox(title) {
+  const p = PROJECTS.find(x => x.title === title);
+  if (!p || !(p.shots || []).length) return;
+  const box = document.getElementById("lightbox");
+  const body = document.getElementById("lightboxBody");
+  const cap = document.getElementById("lightboxTitle");
+  if (!box || !body) return;
+  cap.textContent = p.title;
+  body.innerHTML = p.shots.map((src, i) =>
+    `<figure class="lightbox-figure"><img src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy"></figure>`
+  ).join("");
+  box.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeLightbox() {
+  const box = document.getElementById("lightbox");
+  if (box) box.classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
