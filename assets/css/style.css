@@ -360,3 +360,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: 10px; background: #fff;
 }
 .lightbox-figure img.wide { max-width: 100%; max-height: 100%; }
+
+/* 灯箱视频框 */
+.lightbox-video { width: 720px !important; height: auto !important; }
+.lightbox-video video { width: 100%; border-radius: 12px; background: #000; }
