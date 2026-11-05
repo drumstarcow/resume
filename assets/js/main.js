@@ -36,6 +36,7 @@ const PROJECTS = [
     repo: "https://github.com/drumstarcow/sandac-choice-agent"
   },
   {
+    shots: ["assets/projects/fde-1.png", "assets/projects/fde-2.png", "assets/projects/fde-3.png"],
     title: "施工隐患与整改闭环协同助手",
     desc: "FDE 微专业综合项目（客户：远筑工程）。围绕一笔业务核对资料来源与版本，生成待人工复核的交接清单：不自动销项、不写业务系统。知识库 49 条、知识图谱 89 节点 / 278 关系，回答必带引用；100 笔历史回放自动关联率 84%。",
     tags: ["FastAPI", "知识图谱", "RAG", "审计留痕", "规则+LLM"],
@@ -81,16 +82,17 @@ function renderProjects() {
   const grid = document.getElementById("projectsGrid");
   if (!grid) return;
   grid.innerHTML = PROJECTS.map(p => {
-    const links = [];
-    if (p.repo) links.push(`<a href="${p.repo}" target="_blank" rel="noopener">代码仓库 ↗</a>`);
-    if (p.demo) links.push(`<a href="${p.demo}" target="_blank" rel="noopener">在线演示 ↗</a>`);
     const tags = (p.tags || []).map(t => `<span>${t}</span>`).join("");
+    const shots = (p.shots || []).map((src, i) =>
+      `<figure class="project-shot"><img src="${src}" alt="${p.title} 界面截图 ${i + 1}" loading="lazy"></figure>`
+    ).join("");
+    const shotsBlock = shots ? `<div class="project-shots">${shots}</div>` : "";
     return `
       <article class="project-card">
+        ${shotsBlock}
         <h3>${p.title}</h3>
         <div class="project-tags">${tags}</div>
         <p>${p.desc}</p>
-        <div class="project-links">${links.join("")}</div>
       </article>`;
   }).join("");
 }
