@@ -29,6 +29,7 @@ const PROJECTS = [
     repo: "https://github.com/drumstarcow/my-timetable"
   },
   {
+    shots: ["assets/projects/baobao-1.jpg", "assets/projects/baobao-2.jpg"],
     title: "吃饱饱助手 · 校园吃饭决策智能体",
     desc: "开源 AI 技术实践期末项目（路径 B）。不是给更多选项，而是把选做完：多轮对话澄清偏好、拒绝后真实重排概率、最后落到一道菜。规则优先、模型补缝，全程可追溯。后续计划做成独立 App。",
     tags: ["Agent", "Python", "概率排序", "多轮对话"],
