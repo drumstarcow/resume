@@ -232,3 +232,20 @@ a { color: inherit; text-decoration: none; }
   .nav-links a { padding: 14px 24px; border-top: 1px solid var(--border); }
   .nav-toggle { display: block; }
 }
+
+/* ===== 证书 ===== */
+.certs-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+.cert-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow);
+}
+.cert-card img { display: block; width: 100%; height: auto; }
+.cert-card figcaption { padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.cert-card figcaption b { font-size: 16px; color: var(--text); }
+.cert-card figcaption span { font-size: 13px; color: var(--text-soft); }
+.cert-card .cert-id { font-size: 12px; color: #9aa3ae; }
+@media (max-width: 720px) {
+  .certs-grid { grid-template-columns: 1fr; }
+}
