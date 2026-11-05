@@ -55,7 +55,7 @@ const PROJECTS = [
     repo: "https://github.com/drumstarcow/bid-agent"
   },
   {
-    shots: ["assets/projects/oss-1.jpg", "assets/projects/oss-2.jpg"],
+    shots: ["assets/projects/oss-1.jpg", "assets/projects/oss-3.jpg", "assets/projects/oss-2.jpg"],
     title: "开源许可合规测试报告",
     desc: "开源技术实践课程作业：对开源许可条款做合规性核查与测试记录，覆盖许可证类型识别、传染性判断与使用边界，形成可复核的测试报告。",
     tags: ["开源合规", "许可证", "测试报告"],
