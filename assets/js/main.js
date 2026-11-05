@@ -197,7 +197,8 @@ function openLightbox(title, mode) {
   if (!box || !body) return;
   cap.textContent = p.title;
   const shotsHtml = p.shots.map((src, i) => {
-    return `<figure class="lightbox-figure"><a href="${src}" target="_blank" rel="noopener">` +
+    const isWide = /(shanke|fde|baobao|-pc)/.test(src);
+    return `<figure class="lightbox-figure${isWide ? ' wide-frame' : ''}"><a href="${src}" target="_blank" rel="noopener">` +
       `<img src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy"></a></figure>`;
   }).join("");
   const videoHtml = (mode === 'video' && p.video)
