@@ -23,6 +23,7 @@ const PROJECTS = [
     repo: "https://github.com/drumstarcow/sanda-market"
   },
   {
+    shots: ["assets/projects/shanke-1.jpg"],
     title: "杉课 · 鸿蒙 PC 课程表",
     desc: "华为鸿蒙 PC 课程开发课作品，已上架华为应用市场（v1.0.2，2026-10-18）。课表周视图、周次切换、上课提醒；适配鸿蒙 PC 窗口形态。",
     tags: ["HarmonyOS PC", "ArkTS", "已上架"],
