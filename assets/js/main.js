@@ -55,13 +55,6 @@ const PROJECTS = [
     tags: ["开源合规", "许可证", "测试报告"],
     demo: "",
     repo: "https://github.com/drumstarcow/open-source-license-test-report"
-  },
-  {
-    title: "学生成绩管理系统",
-    desc: "基于 MySQL 设计并实现学生成绩管理数据库（学生表、课程表、成绩表），完成表结构设计与约束设置；编写 SQL 脚本实现增删改查、成绩统计、挂科率分析；并用 Excel / Tableau 制作成绩分布看板。",
-    tags: ["MySQL", "SQL", "Excel", "Tableau"],
-    demo: "",
-    repo: ""
   }
 ];
 
