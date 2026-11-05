@@ -249,3 +249,15 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 720px) {
   .certs-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== 项目截图 ===== */
+.project-shots {
+  display: flex; gap: 10px; margin-bottom: 16px; overflow-x: auto;
+  padding-bottom: 4px;
+}
+.project-shot { flex: 0 0 78%; margin: 0; }
+.project-shot img {
+  display: block; width: 100%; height: auto; border-radius: 10px;
+  border: 1px solid var(--border); background: #f8fafc;
+}
+@media (min-width: 760px) { .project-shot { flex: 0 0 62%; } }
