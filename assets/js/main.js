@@ -40,7 +40,7 @@ const PROJECTS = [
     repo: "https://github.com/drumstarcow/sandac-choice-agent"
   },
   {
-    shots: ["assets/projects/fde-1.png", "assets/projects/fde-2.png", "assets/projects/fde-3.png"],
+    shots: ["assets/projects/fde-1.jpg", "assets/projects/fde-2.jpg", "assets/projects/fde-3.jpg"],
     title: "施工隐患与整改闭环协同助手",
     desc: "FDE 微专业综合项目（客户：远筑工程）。围绕一笔业务核对资料来源与版本，生成待人工复核的交接清单：不自动销项、不写业务系统。知识库 49 条、知识图谱 89 节点 / 278 关系，回答必带引用；100 笔历史回放自动关联率 84%。",
     tags: ["FastAPI", "知识图谱", "RAG", "审计留痕", "规则+LLM"],
