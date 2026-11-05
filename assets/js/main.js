@@ -48,6 +48,7 @@ const PROJECTS = [
     repo: "https://github.com/drumstarcow/fde-construction-safety"
   },
   {
+    shots: ["assets/projects/bid-2.jpg", "assets/projects/bid-1.jpg", "assets/projects/bid-3.jpg"],
     title: "投标智能体平台",
     desc: "基于 FastAPI 与 SQLite 的投标辅助智能体：标讯智能匹配、招标文件废标风险体检、RAG 知识问答、投标建议书一键生成；内置工具调用智能体（规则模式 + 可选 LLM），全程审计日志与人工确认闭环。",
     tags: ["FastAPI", "SQLite", "Agent", "RAG", "LLM"],
