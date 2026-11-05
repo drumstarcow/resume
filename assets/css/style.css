@@ -293,3 +293,6 @@ a { color: inherit; text-decoration: none; }
 .lightbox-body { display: flex; flex-direction: column; gap: 16px; }
 .lightbox-figure { margin: 0; }
 .lightbox-figure img { display: block; width: 100%; height: auto; border-radius: 12px; background: #fff; }
+
+.btn-mini-ghost { background: #eef2ff; color: var(--primary); }
+.btn-mini-ghost:hover { background: #e0e7ff; }
