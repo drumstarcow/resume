@@ -250,7 +250,7 @@ a { color: inherit; text-decoration: none; }
   .certs-grid { grid-template-columns: 1fr; }
 }
 
-/* ================= 项目展示（2026-11-05 简化重做） ================= */
+/* ===== 项目卡片 ===== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -325,3 +325,38 @@ a { color: inherit; text-decoration: none; }
   .lightbox-figure img { max-width: 88vw; max-height: 48vh; }
   .lightbox-figure img.wide { max-width: 92vw; }
 }
+
+/* ================= 展示区统一尺寸（2026-11-05 v8） ================= */
+/* 卡片封面：固定框 + 完整显示 + 留白，不裁图 */
+.project-shot {
+  display: block; margin: 0 0 16px; padding: 8px;
+  height: 200px; overflow: hidden; cursor: zoom-in; position: relative;
+  border: 1px solid var(--border); border-radius: 10px; background: #f8fafc;
+}
+.project-shot img {
+  display: block; width: 100%; height: 100%;
+  object-fit: contain; object-position: center;
+}
+.project-shot figcaption {
+  position: absolute; left: 8px; bottom: 8px;
+  background: rgba(17, 24, 39, .78); color: #fff;
+  font-size: 12px; padding: 4px 10px; border-radius: 999px;
+}
+/* 灯箱：所有图同一个框，完整显示，四周留白 */
+.lightbox-body {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  align-items: flex-end; gap: 20px;
+}
+.lightbox-figure {
+  margin: 0; display: flex; align-items: center; justify-content: center;
+  width: 300px; height: 540px; padding: 8px;
+  background: rgba(255, 255, 255, .04);
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 16px;
+}
+.lightbox-figure img {
+  display: block; max-width: 100%; max-height: 100%;
+  width: auto; height: auto; object-fit: contain;
+  border-radius: 10px; background: #fff;
+}
+.lightbox-figure img.wide { max-width: 100%; max-height: 100%; }
