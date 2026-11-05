@@ -155,13 +155,25 @@ function openLightbox(title, mode) {
   const cap = document.getElementById("lightboxTitle");
   if (!box || !body) return;
   cap.textContent = p.title;
+  const wide = /(shanke|fde|baobao|-pc)/.test;
+  const shotsHtml = p.shots.map((src, i) => {
+    const isWide = /(shanke|fde|baobao|-pc)/.test(src);
+    const w = isWide ? 'min(700px, 46vw)' : 'min(360px, 88vw)';
+    return `<figure style="margin:0;display:flex;justify-content:center">` +
+      `<a href="${src}" target="_blank" rel="noopener" style="display:block;line-height:0">` +
+      `<img src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy" ` +
+      `style="display:block;width:${w};height:auto;max-height:62vh;object-fit:contain;` +
+      `border-radius:14px;background:#fff;box-shadow:0 14px 36px rgba(0,0,0,.5)"></a></figure>`;
+  }).join("");
   const videoHtml = (mode === 'video' && p.video)
-    ? `<figure class="lightbox-figure"><video controls autoplay playsinline style="width:100%;border-radius:12px;background:#000" src="${p.video}"></video></figure>`
+    ? `<figure style="margin:0;display:flex;justify-content:center"><video controls autoplay playsinline style="width:min(900px,92vw);border-radius:14px;background:#000" src="${p.video}"></video></figure>`
     : "";
-  const shotsHtml = p.shots.map((src, i) =>
-    `<figure class="lightbox-figure"><a href="${src}" target="_blank" rel="noopener"><img class="${/(shanke|fde|baobao|-pc)/.test(src) ? 'wide' : ''}" src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy"></a></figure>`
-  ).join("");
   body.innerHTML = videoHtml + (mode === 'video' ? '' : shotsHtml);
+  body.style.display = 'flex';
+  body.style.flexWrap = 'wrap';
+  body.style.justifyContent = 'center';
+  body.style.alignItems = 'flex-start';
+  body.style.gap = '18px';
   box.classList.add("open");
   document.body.style.overflow = "hidden";
 }
