@@ -196,13 +196,18 @@ function openLightbox(title, mode) {
   const cap = document.getElementById("lightboxTitle");
   if (!box || !body) return;
   cap.textContent = p.title;
-  const shotsHtml = p.shots.map((src, i) => {
-    const isWide = /(shanke|fde|baobao|-pc)/.test(src);
-    return `<figure class="lightbox-figure${isWide ? ' wide-frame' : ''}"><a href="${src}" target="_blank" rel="noopener">` +
+  const isWideSrc = (src) => /(shanke|fde|baobao|-pc)/.test(src);
+  const phones = p.shots.filter((src) => !isWideSrc(src));
+  const wides = p.shots.filter((src) => isWideSrc(src));
+  const fig = (src, i, wide) => `<figure class="lightbox-figure${wide ? ' wide-frame' : ''}">` +
+      `<a href="${src}" target="_blank" rel="noopener">` +
       `<img src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy"></a></figure>`;
-  }).join("");
+  const group = (list, wide) => list.length
+    ? `<div class="lightbox-group">` + list.map((src, i) => fig(src, i, wide)).join("") + `</div>`
+    : "";
+  const shotsHtml = group(phones, false) + group(wides, true);
   const videoHtml = (mode === 'video' && p.video)
-    ? `<figure class="lightbox-figure lightbox-video"><video controls autoplay playsinline src="${p.video}"></video></figure>`
+    ? `<div class="lightbox-group"><figure class="lightbox-figure lightbox-video"><video controls autoplay playsinline src="${p.video}"></video></figure></div>`
     : "";
   body.innerHTML = videoHtml + (mode === 'video' ? '' : shotsHtml);
   box.classList.add("open");
