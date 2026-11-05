@@ -30,6 +30,7 @@ const PROJECTS = [
   },
   {
     shots: ["assets/projects/baobao-1.jpg", "assets/projects/baobao-2.jpg"],
+    video: "assets/projects/baobao-demo.mp4",
     title: "吃饱饱助手 · 校园吃饭决策智能体",
     desc: "开源 AI 技术实践期末项目（路径 B）。不是给更多选项，而是把选做完：多轮对话澄清偏好、拒绝后真实重排概率、最后落到一道菜。规则优先、模型补缝，全程可追溯。后续计划做成独立 App。",
     tags: ["Agent", "Python", "概率排序", "多轮对话"],
@@ -92,7 +93,8 @@ function renderProjects() {
          </figure>`
       : "";
     const actions = [];
-    if (shots.length) actions.push(`<button class="btn-mini" onclick="openLightbox('${p.title}')">查看展示</button>`);
+    if (p.video) actions.push(`<button class="btn-mini" onclick="openLightbox('${p.title}', 'video')">▶ 看演示视频</button>`);
+    if (shots.length) actions.push(`<button class="btn-mini btn-mini-ghost" onclick="openLightbox('${p.title}')">查看展示</button>`);
     if (p.repo) actions.push(`<a class="link-mini" href="${p.repo}" target="_blank" rel="noopener">源代码 ↗</a>`);
     if (p.demo) actions.push(`<a class="link-mini" href="${p.demo}" target="_blank" rel="noopener">在线演示 ↗</a>`);
     return `
@@ -143,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ------------------- 展示灯箱 ------------------- */
-function openLightbox(title) {
+function openLightbox(title, mode) {
   const p = PROJECTS.find(x => x.title === title);
   if (!p || !(p.shots || []).length) return;
   const box = document.getElementById("lightbox");
@@ -151,9 +153,13 @@ function openLightbox(title) {
   const cap = document.getElementById("lightboxTitle");
   if (!box || !body) return;
   cap.textContent = p.title;
-  body.innerHTML = p.shots.map((src, i) =>
+  const videoHtml = (mode === 'video' && p.video)
+    ? `<figure class="lightbox-figure"><video controls autoplay playsinline style="width:100%;border-radius:12px;background:#000" src="${p.video}"></video></figure>`
+    : "";
+  const shotsHtml = p.shots.map((src, i) =>
     `<figure class="lightbox-figure"><img src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy"></figure>`
   ).join("");
+  body.innerHTML = videoHtml + (mode === 'video' ? '' : shotsHtml);
   box.classList.add("open");
   document.body.style.overflow = "hidden";
 }
