@@ -250,7 +250,7 @@ a { color: inherit; text-decoration: none; }
   .certs-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== 项目卡片 ===== */
+/* ================= 项目展示（2026-11-05 简化重做） ================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -293,99 +293,31 @@ a { color: inherit; text-decoration: none; }
 .btn-mini-ghost:hover { background: #eef2ff; }
 .link-mini { font-size: 13px; color: var(--text-soft); text-decoration: none; }
 .link-mini:hover { color: var(--primary); text-decoration: underline; }
-/* ================= 灯箱（2026-11-05 定稿） ================= */
+
+/* ================= 灯箱（唯一定稿） ================= */
 .lightbox {
   position: fixed; inset: 0; z-index: 9999; display: none;
   background: #0b1020; padding: 18px 20px 28px; overflow-y: auto;
 }
 .lightbox.open { display: block; }
-.lightbox-inner { max-width: 1120px; margin: 0 auto; }
+.lightbox-inner { max-width: 1180px; margin: 0 auto; }
 .lightbox-bar {
   display: flex; justify-content: space-between; align-items: center;
-  margin-bottom: 16px; position: sticky; top: 0; background: #0b1020; padding: 6px 0; z-index: 2;
+  margin-bottom: 16px; position: sticky; top: 0; background: #0b1020; padding: 6px 0; z-index: 3;
 }
 .lightbox-bar h3 { color: #fff; font-size: 17px; font-weight: 600; }
-.lightbox-close {
-  font-size: 26px; line-height: 1; background: none; border: none;
-  color: #fff; cursor: pointer; padding: 0 6px;
-}
-.lightbox-body {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  align-items: flex-start; gap: 18px;
-}
-.lightbox-figure { margin: 0; line-height: 0; }
-.lightbox-figure img {
-  display: block; width: auto; height: auto;
-  max-width: 340px; max-height: 58vh;
-  border-radius: 14px; background: #fff;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5);
-}
-.lightbox-figure img.wide { max-width: 700px; }
-@media (max-width: 760px) {
-  .lightbox-figure img { max-width: 88vw; max-height: 48vh; }
-  .lightbox-figure img.wide { max-width: 92vw; }
-}
-
-/* ================= 展示区统一尺寸（2026-11-05 v8） ================= */
-/* 卡片封面：固定框 + 完整显示 + 留白，不裁图 */
-.project-shot {
-  display: block; margin: 0 0 16px; padding: 8px;
-  height: 200px; overflow: hidden; cursor: zoom-in; position: relative;
-  border: 1px solid var(--border); border-radius: 10px; background: #f8fafc;
-}
-.project-shot img {
-  display: block; width: 100%; height: 100%;
-  object-fit: contain; object-position: center;
-}
-.project-shot figcaption {
-  position: absolute; left: 8px; bottom: 8px;
-  background: rgba(17, 24, 39, .78); color: #fff;
-  font-size: 12px; padding: 4px 10px; border-radius: 999px;
-}
-/* 灯箱：所有图同一个框，完整显示，四周留白 */
-.lightbox-body {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  align-items: flex-end; gap: 20px;
-}
-.lightbox-figure {
-  margin: 0; display: flex; align-items: center; justify-content: center;
-  width: 300px; height: 540px; padding: 8px;
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid rgba(255, 255, 255, .1);
-  border-radius: 16px;
-}
-.lightbox-figure img {
-  display: block; max-width: 100%; max-height: 100%;
-  width: auto; height: auto; object-fit: contain;
-  border-radius: 10px; background: #fff;
-}
-.lightbox-figure img.wide { max-width: 100%; max-height: 100%; }
-
-/* 灯箱视频框 */
-.lightbox-video { width: 720px !important; height: auto !important; }
-.lightbox-video video { width: 100%; border-radius: 12px; background: #000; }
-
-/* 宽图用横框，不缩进竖框里 */
-.lightbox-figure.wide-frame { width: 620px; height: 400px; }
-@media (max-width: 760px) {
-  .lightbox-figure { width: 88vw !important; height: 62vh !important; }
-  .lightbox-figure.wide-frame { width: 92vw !important; height: 42vh !important; }
-}
-
-/* 2026-11-05 灯箱定稿 v3：统一行高 420px，宽度按类型，图片 contain */
-.lightbox-body {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  align-items: flex-start !important; gap: 18px;
-}
+.lightbox-close { font-size: 26px; line-height: 1; background: none; border: none; color: #fff; cursor: pointer; padding: 0 6px; }
+.lightbox-body { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 18px; }
 .lightbox-figure {
   width: 300px; height: 420px; margin: 0; padding: 8px;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(255, 255, 255, .05);
-  border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 14px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 14px;
 }
 .lightbox-figure.wide-frame { width: 640px; height: 420px; }
-.lightbox-figure img {
-  max-width: 100%; max-height: 100%; width: auto; height: auto;
-  object-fit: contain; border-radius: 10px; background: #fff;
+.lightbox-figure a { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; line-height: 0; }
+.lightbox-figure img { max-width: 100%; max-height: 100%; width: auto !important; height: auto !important; object-fit: contain; border-radius: 10px; background: #fff; }
+.lightbox-video { width: 840px; height: auto; }
+.lightbox-video video { width: 100%; border-radius: 12px; background: #000; }
+@media (max-width: 760px) {
+  .lightbox-figure, .lightbox-figure.wide-frame { width: 90vw; height: 60vh; }
 }
