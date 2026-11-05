@@ -296,3 +296,19 @@ a { color: inherit; text-decoration: none; }
 
 .btn-mini-ghost { background: #eef2ff; color: var(--primary); }
 .btn-mini-ghost:hover { background: #e0e7ff; }
+
+/* ===== 2026-11-05 修版式：统一封面高度 + 卡片等高 ===== */
+.project-card { display: flex; flex-direction: column; }
+.project-card p { flex: 1 1 auto; }
+.project-shot {
+  position: relative; flex: 0 0 auto !important;
+  aspect-ratio: 16 / 10; overflow: hidden;
+  border: 1px solid var(--border); border-radius: 10px; background: #f1f5f9;
+}
+.project-shot img {
+  width: 100% !important; height: 100% !important;
+  object-fit: cover; object-position: top center;
+  border: 0 !important; border-radius: 0 !important;
+}
+.project-shots { overflow: visible !important; }
+.project-actions { margin-top: auto; padding-top: 14px; }
