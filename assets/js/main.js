@@ -159,7 +159,7 @@ function openLightbox(title, mode) {
     ? `<figure class="lightbox-figure"><video controls autoplay playsinline style="width:100%;border-radius:12px;background:#000" src="${p.video}"></video></figure>`
     : "";
   const shotsHtml = p.shots.map((src, i) =>
-    `<figure class="lightbox-figure"><a href="${src}" target="_blank" rel="noopener"><img class="${/\/(shanke|fde|baobao|pc)/.test(src) ? "wide" : ""}" src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy"></a></figure>`
+    `<figure class="lightbox-figure"><a href="${src}" target="_blank" rel="noopener"><img class="${/(shanke|fde|baobao|-pc)/.test(src) ? 'wide' : ''}" src="${src}" alt="${p.title} 截图 ${i + 1}" loading="lazy"></a></figure>`
   ).join("");
   body.innerHTML = videoHtml + (mode === 'video' ? '' : shotsHtml);
   box.classList.add("open");
