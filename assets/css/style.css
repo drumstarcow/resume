@@ -323,6 +323,21 @@ a { color: inherit; text-decoration: none; }
 .lightbox-figure { display: flex; justify-content: center; }
 .lightbox-body { align-items: center; }
 
-/* 遮罩改近不透明，避免导航条透出 */
+/* 2026-11-05 灯箱改横向排布：手机图并排、高度收敛，不再一张拉满屏 */
 .lightbox { background: rgba(10, 15, 28, 0.97) !important; }
-.lightbox-bar h3 { position: relative; z-index: 2; }
+.lightbox-body {
+  flex-direction: row !important; flex-wrap: wrap; justify-content: center;
+  align-items: flex-start !important; gap: 18px !important; max-width: 100%;
+}
+.lightbox-figure { flex: 0 0 auto; max-width: 100%; }
+.lightbox-figure img {
+  display: block; width: auto !important; height: auto !important;
+  max-width: min(420px, 100%) !important;
+  max-height: 64vh !important;
+  border-radius: 14px; background: #fff;
+  box-shadow: 0 12px 32px rgba(0,0,0,.45);
+  cursor: zoom-in;
+}
+.lightbox-figure img.wide { max-width: min(760px, 100%) !important; }
+.lightbox-bar h3 { position: relative; z-index: 2; font-size: 17px; }
+.lightbox-hint { color: #94a3b8; font-size: 13px; align-self: center; }
