@@ -364,3 +364,10 @@ a { color: inherit; text-decoration: none; }
 /* 灯箱视频框 */
 .lightbox-video { width: 720px !important; height: auto !important; }
 .lightbox-video video { width: 100%; border-radius: 12px; background: #000; }
+
+/* 宽图用横框，不缩进竖框里 */
+.lightbox-figure.wide-frame { width: 620px; height: 400px; }
+@media (max-width: 760px) {
+  .lightbox-figure { width: 88vw !important; height: 62vh !important; }
+  .lightbox-figure.wide-frame { width: 92vw !important; height: 42vh !important; }
+}
