@@ -17,8 +17,8 @@ const PROJECTS = [
   {
     shots: ["assets/projects/shanji-0.jpg", "assets/projects/shanji-pc.jpg", "assets/projects/shanji-pc3.jpg", "assets/projects/shanji-3.jpg", "assets/projects/shanji-1.jpg", "assets/projects/shanji-2.jpg", "assets/projects/shanji-pc4.jpg"],
     title: "杉集 · 校园二手交易与跑腿",
-    desc: "面向校园的二手交易 + 快递代拿 + 跑腿类 HarmonyOS 应用（App 与 PC 端二合一）。ArkTS 开发，Node.js 单文件后端；含学生认证、黑名单、聊天与收藏。参加 2026 开源鸿蒙大学生创新大赛。",
-    tags: ["HarmonyOS", "ArkTS", "Node.js", "ArkUI"],
+    desc: "面向校园的二手交易 + 快递代拿 + 跑腿类 HarmonyOS 应用（App 与 PC 端二合一）。ArkTS 开发，Node.js 单文件后端；含学生认证、黑名单、聊天与收藏。**已上架华为应用市场（v1.0.4，2026-11-10 审核通过）**，并参加 2026 开源鸿蒙大学生创新大赛。",
+    tags: ["HarmonyOS", "ArkTS", "Node.js", "ArkUI", "已上架"],
     demo: "",
     repo: "https://github.com/drumstarcow/sanda-market"
   },
